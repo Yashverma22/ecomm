@@ -1,0 +1,88 @@
+To start the react app first run these commands on your terminal
+--> npx create-react-app my-app 
+--> then run the command cd my-app (to use the right path for react)
+--> npm start 
+
+HTML used in App.js and css use in App.css
+
+JSX has some rules for html :
+use first return {
+    <> write html here</>
+}
+use 'HTMLFor' insted of 'for'
+use 'ClassName' insted of 'class'
+use {} on where you want to write js in html
+
+
+
+
+To host a website on your github use
+
+1.npm install gh-pages --save-dev
+2. git init   (to initialize with git)
+3.git add .     (to add all files to git)
+
+
+
+
+
+
+
+
+
+
+  const [isSplashVisible, setIsSplashVisible] = React.useState(true); // in this code there is a useState which initialize
+  the value like true or false or any other things 
+
+
+
+
+
+
+>> to get background running at defferent speed 
+
+ window.addEventListener('scroll', function () {
+    // Get the background element
+    const background = document.getElementById('background');
+
+    // Get the scroll position
+    const scrollPosition = window.scrollY;
+
+    // Set the speed factor for the movement (e.g., 0.2 to slow down movement)
+    const speedFactor = 3;
+
+    // Calculate the new background position based on scroll position and speed factor
+    const newTop = -scrollPosition * speedFactor; // Move background up as you scroll down // ! important
+
+    // Apply the new position to the background
+    background.style.backgroundPosition = `center ${newTop}px`;
+  });
+
+
+
+
+
+
+  >> to get intro first then content use 
+
+  <div className={"video " + (isSplashVisible ? 'show' : 'hidden')}> 
+        all your work for video intro 
+        </div>
+    
+      <div className={"fullcontent " + (isSplashVisible ? 'hidden' : 'show')}>
+        all your work for content
+        </div>
+
+
+// try block for how long you want your video to run
+  try {
+    // Put here your await requests/ API requests
+    setTimeout(() => {
+      setIsSplashVisible(false)
+    }, 3000); // make setIsSplashVisible false after 3 secons 
+  } catch (err) {
+    console.log(err);
+    this.setState({
+      loading: false,
+    });
+  }
